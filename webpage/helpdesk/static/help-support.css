@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, #9C27B0, #2196F3);
+    background-blend-mode: screen;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.help-text,
+.contact-details {
+    color: black;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.help-text h2,
+.contact-details h2 {
+    margin-top: 0;
+}
+
+.help-text ul,
+.contact-details ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.help-text li,
+.contact-details li {
+    margin-bottom: 10px;
+}

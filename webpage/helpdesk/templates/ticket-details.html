@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Details</title>
+    <link rel="stylesheet" href="{% static 'ticket-details.css' %}">    
+</head>
+<body>
+    <div class="container">
+        <h1>Ticket Details</h1>
+        <div class="ticket-details">
+            <p><span>Ticket no</span> <span id="ticketNo">: {{tup.0}}</span></p>
+            <p><span>Booking date</span> <span id="bookingDate">: {{tup.1}}</span></p>
+            <p><span>Booking Time</span> <span id="bookingTime">: {{tup.8}}</span></p>
+            <p><span>Category</span> <span id="category">: {{tup.3}}</span></p>
+            <p><span>Status</span> <span id="status">: {{tup.4}}</span></p>
+            <p><span>Issue details</span> <span id="issueDetails">: {{tup.5}}</span></p>
+            <p><span>Room No</span> <span id="roomNo">: {{tup.7}}</span></p>
+        </div>
+        <div class="home-button">
+            <a href="/helpdesk/home/">Home</a>
+        </div>
+    </div>
+</body>
+</html>

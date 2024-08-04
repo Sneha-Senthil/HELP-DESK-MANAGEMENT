@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport",content="width=device-width,intital-scale=1">
+        <title> SSN HELPDESK</title>
+        <!---custom css link--->
+        <link rel="stylesheet" type="text/css" href="{% static 'log-in.css' %}">
+        <!---boxicons link--->
+        <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!---google fonts link--->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <body>
+            <div class="container">
+                <div class="main-box">
+                    <h1><strong>Sign in to SSN IT Helpdesk</strong></h1>
+                    <br>
+                    
+                    <form action="/helpdesk/log-in/" method="post">
+                        {% if error %}
+                        <div style="color:black" class="valid" role="alert">
+                            <h3>Please enter valid Credentials</h3>
+                        </div>
+                        {% endif %}
+                        {% csrf_token %}
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-envelope'></i></span>
+                            <input type="Email or Username" required name='email_user'><br>
+                            <label>Email or Username</label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                            <input type="password" required name="password">
+                            <label>Password</label>
+                        </div>
+
+                        <!-- <div class="check">
+                            <a href="#">Forgot Password</a>
+                        </div> -->
+
+                        <input type="submit" value="Log In" class="btn">
+    
+                        <div>
+                            <br>
+                            <b>I'm an agent</b> —
+                            <a href="/helpdesk/agent-log-in/">sign in here</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </body>
+
+
+    </head>
+</html>

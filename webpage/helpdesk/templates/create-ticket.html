@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open a new ticket</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="{% static 'create-ticket.css' %}">
+    <h1>Open a new ticket</h1>
+    <form action="/helpdesk/create-ticket/" method="post">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <p>{{mail}}</p>
+        
+        <label for="client">Client:</label>
+        <p>{{user_name}}</p>
+        
+        <label for="issue-category">Issue Category:</label>
+        <select id="issue-category" required name="issue-category" onchange="showDescription()">
+            <option value="">Select Category</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Plumbing">Plumbing</option>
+        </select>
+        
+        <div id="description" class="hidden">
+            <label for="description">Description:</label>
+            <textarea id="description" required name="description" rows="4" cols="50"></textarea>
+        </div>
+        
+        <label for="room-no">IT Department Room No:</label>
+        <input type="text" id="room-no" required name="room-no">
+    
+        <div class="form-buttons">
+            <input type="submit" value="Create Ticket">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+    
+    <script>
+        function showDescription() {
+            var category = document.getElementById("issue-category").value;
+            var descriptionField = document.getElementById("description");
+            
+            if (category === "") {
+                descriptionField.classList.add("hidden");
+            } else {
+                descriptionField.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Ticket Details</title>
+  <link rel="stylesheet" href="{% static 'user-tickets.css' %}">
+</head>
+<body>
+  <h1>Opened Tickets</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Ticket No</th>
+        <th>Booking Date</th>
+        <th>Booking Time</th>
+        <th>Category</th>
+        <th>Issue</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tup in obj_lst %}
+      <tr>
+        <td>{{tup.0}}</td>
+        <td>{{tup.1}}</td>
+        <td>{{tup.8}}</td>
+        <td>{{tup.3}}</td>
+        <td>{{tup.5}}</td>
+        <td>{{tup.4}}</td>
+      {% endfor %}
+      </tr>
+      <!-- Add more opened ticket rows as needed -->
+    </tbody>
+  </table>
+  
+  <div class="button-container">
+    <a href="/helpdesk/home/" class="button">Home</a>
+    <a href="/helpdesk/create-ticket/" class="button">Open Ticket</a>
+    <form action="/helpdesk/user-tickets/" method="post">
+      <button type="submit" class="button">Raise Ticket</button>
+      <select name="ticket-no">
+        <option value="Ticket No" name="ticket-no">Ticket No</option>
+        {% for tup in obj_lst %}
+        <option value="{{tup.0}}">{{tup.0}}</option>
+        {% endfor %}
+      </select>
+      {% csrf_token %}
+    </form>
+  </div>
+  
+  <div class="message-box">
+    <p>{{prompt}}</p>
+  </div>
+</body>
+</html>

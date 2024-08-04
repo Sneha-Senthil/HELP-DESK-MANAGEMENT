@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SSN IT Helpdesk</title>
+    </head>
+    <body>
+        <!---custom css link--->
+        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+        <!---boxicons link--->
+        <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!---google fonts link--->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <div id="container">
+                    <div id="header">
+                <div class="pull-right-flush-right">
+                <pre>
+                                                                                                                                                                                                                                                                                                    <strong>Guest User</strong>
+                </pre>
+                <p>
+                </p>
+                </div>
+                <a class="new1" id="logo" href="/helpdesk/home/" title="Support Center">
+                    <span class="valign-helper"></span>
+                    <img src="{% static 'ssn-logo.php' %}" border="0" alt="SSN IT Helpdesk">
+                </a>
+            </div>
+            <div class="clear"></div>
+                    <ul id="nav" class="flush-left">
+                <button><a class=" login" href="/helpdesk/log-in/">Log In</a></button>
+                <button><a class=" status" href="/helpdesk/check-ticket-status/">Check Ticket Status</a></button>
+                <button><a class=" signup" href="/helpdesk/help-support/">Help Support</a></button>
+            </ul>
+                    <div id="content">
+   
+             <div id="landing_page">
+        <div class="sidebar pull-right">
+            <div class="front-page-button flush-right">
+            </div>
+            <div class="content"></div>
+        </div>
+   
+    <div class="main-content">
+    <div class="thread-body">
+    <h1><span style="color:rgb(23, 54, 93)">SSN Incident Management Application</span></h1> <p>Please use this portal to report an incident for any issues you face or observe. Examples are System not working, Internet / Wi-Fi issues,UPS,Electrical / Plumbing, RO Water, Intercom, AC, Transport, Attendance,Cafeteria etc)</p> <p>The process is simple.</p> <p>1) Login to the tool (<a href="/helpdesk/log-in/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://helpdesk.ssn.edu.in:5080/&amp;source=gmail&amp;ust=1654054042745000&amp;usg=AOvVaw1NdW8_sXvxnF-7WG4POWnr">Log In</a>) using Digital ID Credentials.</p> <p>2) Click “Open a New Ticket”.</p> <p>2) Select appropriate Category from Help Drop down.</p> <p>3) Give a description of the issue.</p> <p>4) Click on “Create Ticket”.</p> <p>5) Share your mobile number (optional) to speed up the resolution process.</p>    </div>
+    </div>
+    <div class="clear"></div>
+   
+    <div>
+    </div>
+    </div>
+   
+            </div>
+        </div>
+    <script type="text/javascript">
+        getConfig().resolve({"html_thread":true,"lang":"en_US","short_lang":"en","has_rtl":false,"primary_language":"en-US","secondary_languages":[],"path":"\/"});
+    </script>
+   
+   
+    </body>
+</html>

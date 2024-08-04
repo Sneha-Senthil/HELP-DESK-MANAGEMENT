@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport",content="width=device-width,intital-scale=1">
+        <title> Check Ticket Status</title>
+        <!---custom css link--->
+        <link rel="stylesheet" type="text/css" href="{% static 'check-ticket-status.css' %}">
+        <!---boxicons link--->
+        <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!---google fonts link--->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <body>
+            <div class="container">
+                <div class="main-box">
+                    <h1><strong>Check Ticket Status</strong></h1>
+                    <br>
+                    <form action="/helpdesk/check-ticket-status/" method="post">
+                        {% if error %}
+                            <div style="color:black" class="valid" role="alert">
+                                <h3>Please enter valid username or ticket no</h3>
+                            </div>
+                        {% endif %}
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-envelope'></i></span>
+                            <input type="Email or Username" name="email-user" required>
+                            <label>Email or Username</label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                            <input type="number" name="ticket-no" required>
+                            <label>Ticket Number</label>
+                        </div>
+
+                        <button type="submit" class="btn">Email Access Link</button>
+                        {% csrf_token %}
+                    </form>
+                        <div>
+                            <br>
+                            <b>Have an account with us?</b> —
+                            <a href="/helpdesk/log-in/" style="color:white">Sign In</a>
+                            <br>
+                            <b>Dont have an account?</b>
+                            <a href="/helpdesk/sign-up/" style="color:white"> Register here</a>
+                        </div>
+                </div>
+            </div>
+        </body>
+
+
+    </head>
+</html>
